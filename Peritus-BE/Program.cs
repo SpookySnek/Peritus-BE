@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Peritus_BE.Context;
 
 
@@ -14,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<PeritusDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 
 var app = builder.Build();
@@ -78,5 +78,5 @@ public class Quote
 {
     public int Id { get; set; }
     public string? QuoteText { get; set; }
-    public DateTime uploadDate { get; set; }
+    public DateTime UploadDate { get; set; }
 }
