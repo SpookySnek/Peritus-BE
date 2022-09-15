@@ -7,5 +7,6 @@ namespace Peritus_BE.Context
         public PeritusDbContext(DbContextOptions<PeritusDbContext> options) : base(options)
         {
         }
+        public DbSet<Quote> Quotes => Set<Quote>();
     }
 }
