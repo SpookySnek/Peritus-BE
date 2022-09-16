@@ -12,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<PeritusDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+builder.Services.AddDbContext<PeritusDbContext>(opt => opt.UseInMemoryDatabase("Peritus"));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 
